@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "packages/core",
+			"name": "core"
+		},
+		{
+			"path": "packages/doc",
+			"name": "doc"
+		},
+		{
+			"path": "packages/paper",
+		}
+	],
+	"settings": {}
+}

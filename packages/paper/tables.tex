@@ -1,0 +1,74 @@
+% \begin{table*}[t]
+%     \centering
+%     \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}
+%         \hline
+%         \multirow{2}{*}{Model} & \multicolumn{2}{|c|}{Stacked} & \multicolumn{2}{|c|}{Grayscale} & \multicolumn{2}{|c|}{Viridis} & \multicolumn{2}{|c|}{Plasma} & \multicolumn{2}{|c|}{Magma} & \multicolumn{2}{|c|}{Spectral} \\
+%         \cline{2-13}
+%          & Top-1 & Top-5 & Top-1 & Top-5 & Top-1 & Top-5 & Top-1 & Top-5 & Top-1 & Top-5 & Top-1 & Top-5 \\
+%         \hline
+%         AlexNet & \textbf{04.53} & \textbf{11.63} & 04.50 & 11.62 & 01.04 & 03.83 & 01.24 & 03.98 & 02.54 & 07.59 & 01.55 & 04.67 \\
+%         \hline
+%         VGG19 & \textbf{10.04} & \textbf{22.00} & 09.97 & 21.79 & 04.64 & 11.87 & 04.29 & 10.95 & 06.45 & 15.31 & 03.32 & 09.50 \\
+%         \hline
+%         ResNet50 & 13.18 & \textbf{28.16} & \textbf{13.27} & 28.16 & 06.56 & 16.23 & 05.83 & 14.00 & 09.71 & 21.44 & 05.70 & 13.90 \\
+%         \hline
+%         InceptionV3 & \textbf{16.48} & \textbf{33.05} & 16.40 & 32.94 & 13.16 & 26.66 & 12.36 & 25.34 & 15.01 & 30.07 & 10.39 & 22.79 \\
+%         \hline
+%     \end{tabular}
+%     \caption{Baseline accuracy comparison across colormaps for ImageNet 1k-class depth.}
+%     \label{tab:baseline_accuracy}
+% \end{table*}
+
+% \begin{table*}[t]
+%     \centering
+%     \begin{tabular}{|l|cc|cc|cc|}
+%         \hline
+%         \multicolumn{1}{|c|}{\multirow{2}{*}{Model}} & \multicolumn{2}{c|}{No Fine-Tuning} & \multicolumn{2}{c|}{Partial Fine-Tuning} & \multicolumn{2}{c|}{Fine-Tuning}                                 \\ \cline{2-7} 
+%         \multicolumn{1}{|c|}{}                       & \multicolumn{1}{c|}{Top-1}  & Top-5 & \multicolumn{1}{c|}{Top-1}    & Top-5    & \multicolumn{1}{c|}{Top-1}                & Top-5                \\ \hline
+%         AlexNet                                      & \multicolumn{1}{c|}{04.53}  & 11.63 & \multicolumn{1}{c|}{18.05}    & 36.41    & \multicolumn{1}{c|}{\textbf{23.62}}       & \textbf{45.76}       \\ \hline
+%         VGG19                                        & \multicolumn{1}{c|}{10.04}  & 22.00 & \multicolumn{1}{c|}{25.40}    & 48.18    & \multicolumn{1}{c|}{\textbf{34.20}}       & \textbf{60.96}       \\ \hline
+%         ResNet50                                     & \multicolumn{1}{c|}{13.18}  & 28.16 & \multicolumn{1}{c|}{32.36}    & 57.87    & \multicolumn{1}{c|}{\textbf{44.95}}       & \textbf{71.90}       \\ \hline
+%         InceptionV3                                  & \multicolumn{1}{c|}{16.48}  & 33.05 & \multicolumn{1}{c|}{22.31}    & 44.57    & \multicolumn{1}{c|}{\underline{\textbf{48.53}}} & \underline{\textbf{74.53}} \\ \hline
+%     \end{tabular}
+%     \caption{Fine-tuning accuracy comparison for ImageNet 1k-class depth.}
+%     \label{tab:finetuning_accuracy}
+% \end{table*}
+
+% \begin{table*}[t]
+%     \centering
+%     \begin{tabular}{|l|c|c|c|c|}
+%         \hline
+%         \multirow{2}{*}{Model} & \multicolumn{2}{|c|}{Partial Fine-Tuning} & \multicolumn{2}{|c|}{Complete Fine-Tuning} \\ \cline{2-5}
+%          & Top-1 & Top-5 & Top-1 & Top-5 \\
+%         \hline
+%         AlexNet & 26.25 & \textbf{52.90} & 26.40 & \textbf{51.25} \\
+%         \hline
+%         VGG19 & 32.50 & \textbf{59.95} & 36.70 & \textbf{65.25} \\
+%         \hline
+%         ResNet50 & 44.30 & \textbf{71.15} & 47.75 & \textbf{73.20} \\
+%         \hline
+%         InceptionV3 & 38.70 & \textbf{64.15} & 47.95 & \textbf{72.80} \\
+%         \hline
+%     \end{tabular}
+%     \caption{Accuracy comparison for 200-class ImageNet subset.}
+%     \label{tab:imagenet_subset_accuracy}
+% \end{table*}
+
+% \begin{table*}[t]
+%     \centering
+%     \begin{tabular}{|l|c|c|}
+%         \hline
+%         Model & Top-1 & Top-5 \\
+%         \hline
+%         AlexNet & \textbf{87.51} & \textbf{98.79} \\
+%         \hline
+%         VGG19 & \textbf{92.23} & \textbf{99.61} \\
+%         \hline
+%         ResNet50 & \textbf{88.48} & \textbf{99.31} \\
+%         \hline
+%         InceptionV3 & \textbf{89.45} & \textbf{99.08} \\
+%         \hline
+%     \end{tabular}
+%     \caption{Partial fine-tuning accuracy on Washington RGB-D.}
+%     \label{tab:washington_rgbd_accuracy}
+% \end{table*}

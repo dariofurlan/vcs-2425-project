@@ -1,0 +1,22 @@
+\section{Conclusion and Future Work}
+
+This work has demonstrated that depth-only images can achieve competitive performance in image classification tasks using standard convolutional neural networks (CNNs) pretrained on RGB data. Our results indicate that, even without fine-grained texture or color, depth information alone can provide sufficient structure for effective classification across both synthetic and real-world datasets.
+
+\begin{itemize}
+    \item \textbf{High accuracy on real-world data:} On the Washington RGB-D dataset, models such as VGG19 surpassed 92\% Top-1 accuracy, confirming the viability of depth-only inputs in practical, privacy-sensitive environments.
+    
+    \item \textbf{Use of existing architectures:} By applying minimal preprocessing—normalization, channel stacking, and colormap mapping—we successfully adapted standard architectures (e.g., ResNet50, InceptionV3, VGG19) to operate on depth images without requiring modifications to the model structure.
+    
+    \item \textbf{Effectiveness of fine-tuning:} Fine-tuning, even when limited to later layers, consistently improved classification performance, especially in complex scenarios such as the full 1,000-class ImageNet subset, where baseline accuracies more than doubled after training.
+    
+    \item \textbf{Privacy-aware vision:} Depth images inherently lack identifying features such as facial detail or clothing patterns, making them particularly well-suited for computer vision applications in domains requiring privacy, such as healthcare, education, and public surveillance.
+\end{itemize}
+
+\subsection{Future Work}
+A key limitation of this study is the limited number of depth samples per class, due to the scarcity of large-scale depth-only image classification datasets. To address this, we plan to scale our experiments to the full ImageNet dataset with estimated depth maps, enabling evaluation in a higher-data regime and testing the scalability of our approach.
+
+Additionally, adapting single-channel depth maps to standard three-channel CNN inputs poses a challenge. To this end, future work will explore learned depth encodings via lightweight autoencoder networks, as demonstrated in \cite{carlucci2018de2codeepdepth}, which proposes a deep learning approach to transform depth images into RGB format.
+
+Moreover, we intend to extend our exploration beyond classification to the task of \textit{semantic segmentation}. While high-quality depth-based datasets for image classification remain scarce, numerous segmentation datasets include depth information. This shift will enable a broader and more realistic evaluation of depth-only models in structured prediction tasks, and may provide further evidence for the suitability of depth data in privacy-sensitive vision applications.
+
+Ultimately, this line of research seeks to develop practical and privacy-conscious computer vision systems that do not compromise on performance, while avoiding reliance on RGB data.

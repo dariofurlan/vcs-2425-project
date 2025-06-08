@@ -1,0 +1,16 @@
+data
+image-net
+image-net-depth
+datasets
+.venv
+output
+resized
+Marigold
+
+ILSVRC2012_img_val
+__pycache__
+*.egg-info
+
+.vscode/
+ILSVRC2012_depth/
+*.pth

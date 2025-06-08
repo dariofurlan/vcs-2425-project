@@ -1,0 +1,31 @@
+\section{Methodology}
+
+We investigate whether standard convolutional neural networks (CNNs) can effectively classify objects using depth-only inputs, a question motivated by the need for privacy-preserving computer vision.
+
+\subsection{Architectures}
+
+To assess performance across different model families and depths, we evaluate four well-known CNN architectures, originally developed for RGB image classification:
+
+\begin{itemize}
+    \item \textbf{AlexNet}: a relatively shallow model with fewer parameters, representing the early generation of deep learning-based classifiers \cite{alexnet}.
+    \item \textbf{VGG19}: a deeper model with a straightforward design based on stacked $3 \times 3$ convolutions \cite{vgg19}.
+    \item \textbf{ResNet50}: a residual network with 50 layers and identity shortcut connections, allowing for effective training of deeper models \cite{resnet50}.
+    \item \textbf{Inception-v3}: an architecture that uses parallel convolutional paths and factorized filters to balance efficiency and performance \cite{inceptionv3}.
+\end{itemize}
+
+These models were chosen to cover a range of architectural complexity and to observe whether trends in RGB image classification carry over to depth-only data.
+
+\subsection{Training Regimes}
+
+Each model is evaluated under three distinct training configurations:
+\begin{itemize}
+    \item \textbf{Baseline}: The model is evaluated using its original pre-trained weights, without any adaptation to the depth modality.
+    \item \textbf{Partial Fine-tuning}: Only the final classification layers are made trainable, allowing limited adaptation to the depth input.
+    \item \textbf{Full Fine-tuning}: All parameters are made trainable, enabling full adaptation of the network to the new data modality.
+\end{itemize}
+
+\subsection{Evaluation Protocol}
+
+Not all training regimes are applied to all datasets due to dataset-specific constraints. Baseline evaluation is performed only on the \textit{ImageNet 1k-class depth} dataset, where pre-trained models can be meaningfully assessed without retraining. Both partial and full fine-tuning are applied where sufficient training data is available (\textit{ImageNet 1k-class and 200-class depth}), while the smaller \textit{Washington RGBD} dataset is used only with partial fine-tuning to avoid overfitting.
+
+We use classification \textbf{accuracy} as our main evaluation metric, and report both \textbf{Top-1} accuracy (the correct label is the highest-ranked prediction) and \textbf{Top-5} accuracy (the correct label is among the five highest-ranked predictions). For baseline evaluations, the entire dataset is used for testing. In fine-tuning settings, we adopt a standard 80/20 split for training and validation.

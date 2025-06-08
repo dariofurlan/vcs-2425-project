@@ -1,0 +1,64 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+%\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{Privacy-Preserving Computer Vision:\\ Leveraging Depth Images for Image Classification}
+
+\author{Dario Furlan \\
+{\tt\small dario.furlan.2@studenti.unipd.it}
+\and
+Dawit Andargachew\\
+{\tt\small  dawitandargachew.asmare@studenti.unipd.it}
+}
+
+\maketitle
+% \thispagestyle{empty}
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+As privacy concerns grows, computer vision must move beyond RGB, but can depth-only data compete? While most research focuses on encrypted color images or custom architectures, we ask: Can off-the-shelf models classify objects using just depth?
+
+We evaluate standard CNNs on depth-only inputs from two datasets: depth estimations from ImageNet using the Marigold model, and real-world depth scans from the Washington RGB-D dataset. Fine-tuning these models yielded promising results, with accuracies exceeding 70\% (Top-5) on ImageNet subsets and 90\% (Top-1) on Washington RGB-D.
+
+These findings challenge the reliance on RGB data and specialized architectures for privacy-preserving vision. Depth data, whether approximated or raw, can enable strong classification performance using widely available models, opening doors to more complex applications like object detection and anomaly detection.
+
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/dataset}
+\input{sections/methodology}
+\input{sections/experiments}
+\input{sections/conclusion}
+
+{\small
+\bibliographystyle{ieee_fullname}
+\bibliography{egbib}
+}
+
+\end{document}
