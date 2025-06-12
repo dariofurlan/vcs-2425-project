@@ -6,7 +6,7 @@ We initiated our experiments by evaluating the performance of the models ``as-is
 
 The models employed in this study (AlexNet, VGG19, InceptionV3, ResNet50) were conveniently pretrained on the same 1,000 classes as our dataset. This alignment was achieved by carefully curating the dataset, thereby obviating the need to fine-tune the final layer of the classifier, as it already produced the correct labels.
 
-To establish a baseline and investigate whether the models exhibited varying performance under different colormaps of the depth images, we experimented with a stacked approach, grayscale, viridis, plasma and magma colormaps as shown in the \autoref{fig:model_acc_by_colormap} and the \autoref{tab:baseline_accuracy}.
+To establish a baseline and investigate whether the models exhibited varying performance under different colormaps of the depth images, we experimented with a stacked approach, grayscale, viridis, plasma and magma colormaps as shown in \autoref{fig:model_acc_by_colormap} and summarized in \autoref{tab:baseline_accuracy}.
 
 \begin{figure}[h]
     \centering
@@ -65,7 +65,8 @@ While both fine-tuning strategies enhanced the models' ability to interpret dept
 % This supports further exploration in this direction.
 
 \subsection{ImageNet Subset (200 Classes)}
-As mentioned earlier, we adopted the stacked colormap representation even for the 200-class ImageNet subset.
+
+As shown in Table 3, full fine-tuning consistently outperforms partial fine-tuning across all models on the 200-class subset. InceptionV3 achieves the highest Top-1 accuracy (47.95\%, 72.80\% ), while ResNet50 leads in Top-5 accuracy (47.75\%, 73.20\%). The relative performance ranking of the models aligns with the results from the 1000-class subset, indicating stable model behavior despite the smaller dataset size. Both fine-tuning approaches improve performance; however, deeper networks benefit more substantially from full fine-tuning, highlighting the importance of end-to-end adaptation when working with limited data.
 
 \begin{table*}[htbp]
     \centering
@@ -109,14 +110,9 @@ As mentioned earlier, we adopted the stacked colormap representation even for th
     \end{minipage}
 \end{table*}
 
-The observed {Top-1} accuracies show that targeted fine-tuning on a reduced label space significantly improves performance compared to tasks with many classes.
-
-ANALYSIS FEW LINES
-
 \subsection{Washington RGB-D Dataset}
-Following the same approach we used again the stacked colormap representation for the Washington RGB-D dataset.
-In contrast, the Washington RGB-D dataset comprises only {51 classes}, representing a significantly {lower task complexity}. As shown in \autoref{tab:washington_rgbd_accuracy}, all models achieved near 90\% Top-1 accuracy, with VGG19 reaching up to 92.23\%.
+Following the same approach we used again the stacked colormap representation for the Washington RGB-D dataset. In contrast, the Washington RGB-D dataset comprises only 51 classes, with an average of 821 images per class, unlike ImageNet, which has only 50, representing a significantly lower task complexity and substantially larger training data. 
 
+As reported in Table 4, all models achieved near 90\% Top-1 accuracy, with VGG19 reaching up to 92.23\%. These results were obtained using partial fine-tuning alone. Given this high baseline, we opted not to undertake complete fine-tuning, concluding that the incremental improvements would not justify the higher computational expense. 
 
-
-These results were obtained using {partial fine-tuning alone}. Given this high baseline, we opted not to undertake complete fine-tuning, concluding that the incremental improvements would not justify the higher computational expense.
+Overall, for sufficiently large datasets, transfer learning tends to be highly effective, eliminating the need for complete fine-tuning.
