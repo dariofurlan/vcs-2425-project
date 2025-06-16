@@ -26,6 +26,6 @@ Each model is evaluated under three distinct training configurations:
 
 \subsection{Evaluation Protocol}
 
-Not all training regimes are applied to all datasets due to dataset-specific constraints. Baseline evaluation is performed only on the \textit{ImageNet 1k-class depth} dataset, where pre-trained models can be meaningfully assessed without retraining. Both partial and complete fine-tuning are applied where sufficient training data is available (\textit{ImageNet 1k-class and 200-class depth}), while the smaller \textit{Washington RGBD} dataset is used only with partial fine-tuning to avoid overfitting.
+Not all training regimes are applied to all datasets due to dataset-specific constraints. Baseline evaluation is performed only on the \textit{ImageNet 1k-class depth} dataset, where pre-trained models can be meaningfully assessed without retraining. Both partial and complete fine-tuning are applied where sufficient training data is available (\textit{ImageNet 1k-class and 200-class depth}), while the smaller \textit{Washington RGB-D} dataset is used only with partial fine-tuning to avoid overfitting.
 
 We use classification \textbf{accuracy} as our main evaluation metric, and report both \textbf{Top-1} accuracy (the correct label is the highest-ranked prediction) and \textbf{Top-5} accuracy (the correct label is among the five highest-ranked predictions). For baseline evaluations, the entire dataset is used for testing. In fine-tuning settings, we adopt a standard 80/20 split for training and validation.

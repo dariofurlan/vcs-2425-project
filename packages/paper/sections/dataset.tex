@@ -5,7 +5,7 @@ Our experiments are conducted using depth images from three sources: the ImageNe
 \subsection{ImageNet 1k-class depth}
 ImageNet \cite{imagenet} is a large-scale dataset originally developed for visual object recognition, containing over 1.4 million images across 1,000 classes. Due to its size, we limited our experiments to the 50,000-image validation set. 
 
-Since ImageNet contains only RGB images, we used Marigold \cite{marigold} (a diffusion-based model for depth estimation) to generate corresponding depth maps, as seen in the \autoref{fig:imagenet-depth-est-example}.
+Since ImageNet contains only RGB images, we used Marigold \cite{marigold} (a diffusion-based model for depth estimation) to generate corresponding depth maps, as seen in \autoref{fig:imagenet-depth-est-example}.
 Marigold produces single-channel, 16-bit PNGs, where each pixel has a value between 0 (near plane) and 65,535 (far plane), with both planes determined by the model during inference. These estimated depth maps retain the original width and height of the RGB images.
 
 We called the resulting dataset \textit{ImageNet 1k-class depth}. These synthesized depth maps enable us to evaluate the feasibility of using depth-only inputs for image classification with standard architectures.
@@ -41,7 +41,7 @@ Depth images are single-channel and thus incompatible with CNNs pretrained on RG
     \item Channel Expansion: We convert the single-channel 8-bit image into a 3-channel image using two main strategies:
     \begin{itemize}
         \item Channel Duplication (Stacking): Simply by replicating the depth channel across all three channels.
-        \item Colormap Mapping: We apply perceptually uniform colormaps (Viridis, Plasma, Magma and Grayscale) to produce pseudo-RGB images, allowing us to investigate whether color encoding affects feature extraction as shown in the \autoref{fig:depth-color-mapping-examples}.
+        \item Colormap Mapping: We apply perceptually uniform colormaps (Viridis, Plasma, Magma and Grayscale) to produce pseudo-RGB images, allowing us to investigate whether color encoding affects feature extraction as shown in \autoref{fig:depth-color-mapping-examples}.
     \end{itemize}
 \end{itemize}
 
@@ -53,4 +53,4 @@ Depth images are single-channel and thus incompatible with CNNs pretrained on RG
 \end{figure}
 
 \subsubsection{Preprocessing the Washington RGB-D Dataset}
-The Washington RGB-D dataset already includes 16-bit depth maps captured via Kinect. We applied the same post-processing steps used for ImageNet: 16-bit depth values to 8-bit normalization, and conversion to 3-channel format via channel duplication and colormap mapping. This ensures consistency in input structure across both synthetic and real-world depth data.
+The Washington RGB-D dataset already includes 16-bit depth maps captured via Kinect. We applied the same post-processing steps used for ImageNet: normalizing 16-bit depth values to 8-bit, and conversion to 3-channel format via channel duplication and colormap mapping. This ensures consistency in input structure across both synthetic and real-world depth data.
