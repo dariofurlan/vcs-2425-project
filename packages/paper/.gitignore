@@ -12,7 +12,6 @@
 .*.lb
 *.ist
 *.bst
-*.bib
 
 .DS_Store
 
