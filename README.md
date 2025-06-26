@@ -11,15 +11,30 @@ We evaluate standard CNNs on depth-only inputs from two datasets: depth estimati
 
 These findings challenge the reliance on RGB data and specialized architectures for privacy-preserving vision. Depth data, whether approximated or raw, can enable strong classification performance using widely available models, opening doors to more complex applications like object detection and anomaly detection.
 
-## Notebooks
+
+
+
+## 📄 Read Our Paper
+
+The final report detailing our methods, results, and conclusions is available below. The LaTeX source files are also included for reproducibility or editing.
+
+- [📘 Final Paper (PDF)](/packages/paper/egpaper_final.pdf)
+- [📂 LaTeX Source Folder](/packages/paper/)
+
+
+<br/>
+<br/>
+
+##  Model Training & Finetuning Notebooks
+This section contains Jupyter notebooks for training and finetuning off-the-shelf, widely adopted CNN architectures on depth image datasets.
+
 
 ### __ImageNet 1k-class depth__
 
 Ground truth for the ImageNet validation set can be found at: [packages/core/ILSVRC2012_devkit_t12/ILSVRC2012_validation_ground_truth.txt](/packages/core/ILSVRC2012_devkit_t12/ILSVRC2012_validation_ground_truth.txt). Alternatively, it can be downloaded from the official [ImageNet website](https://image-net.org/download-images), the 2012 challenge section.
 
 
-
-#### Baseline:
+#### Baseline
 - AlexNet: [AlexNet baseline](/packages/core/ImageNet-1k-classes/baseline/alexnet_baseline.ipynb)
 - VGG19:  [VGG19 baseline](/packages/core/ImageNet-1k-classes/baseline/vgg19_baseline.ipynb)
 - Resnet50: [Resnet50 baseline](/packages/core/ImageNet-1k-classes/baseline/resnet50_baseline.ipynb)
@@ -38,6 +53,7 @@ Ground truth for the ImageNet validation set can be found at: [packages/core/ILS
 - Inception-v3: [Inception-v3 complete finetuning](/packages/core/ImageNet-1k-classes/complete_finetuning/inceptionv3_ft.ipynb)
 
 
+<br/>
 
 ### __ImageNet Subset (200 Classes)__
 
@@ -58,6 +74,8 @@ The list of classes for the ImageNet 200-class depth dataset can be found at [pa
 - Resnet50: [Resnet50 complete finetuning](/packages/core/ImageNet-200-classes/complete_finetuning/Resnet50_ft.ipynb)
 - Inception-v3: [Inception-v3 complete finetuning](/packages/core/ImageNet-200-classes/complete_finetuning/Inception_v3_pft.ipynb)
 
+
+<br/>
 
 ### __Washington RGB-D Dataset__
 #### Partial Finetuning
