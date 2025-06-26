@@ -23,10 +23,9 @@ The final report detailing our methods, results, and conclusions is available be
 
 
 <br/>
-<br/>
 
 ##  Model Training & Finetuning Notebooks
-This section contains Jupyter notebooks for training and finetuning off-the-shelf, widely adopted CNN architectures on depth image datasets.
+This section contains Jupyter notebooks for training and finetuning **off-the-shelf, widely adopted CNN architectures** on **depth image** datasets.
 
 
 ### __ImageNet 1k-class depth__
