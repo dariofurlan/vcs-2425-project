@@ -1,10 +1,10 @@
 <div align="center">
 
-# 🕶️ Privacy-Preserving Computer Vision
+# Privacy-Preserving Computer Vision
 
 ### Can off-the-shelf CNNs classify objects from depth images alone?
 
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)&nbsp;&nbsp;&nbsp; ![PyTorch](https://img.shields.io/badge/PyTorch-2.6-EE4C2C?logo=pytorch&logoColor=white)&nbsp;&nbsp;&nbsp; ![Jupyter](https://img.shields.io/badge/Jupyter-notebooks-F37626?logo=jupyter&logoColor=white)&nbsp;&nbsp;&nbsp; ![License](https://img.shields.io/badge/License-MIT-blue)&nbsp;&nbsp;&nbsp; [![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b)](packages/paper/egpaper_final.pdf)
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)&nbsp;&nbsp;&nbsp; ![PyTorch](https://img.shields.io/badge/PyTorch-2.6-EE4C2C?logo=pytorch&logoColor=white)&nbsp;&nbsp;&nbsp; [![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b)](packages/paper/egpaper_final.pdf)
 
 <img src="packages/doc/images/Original-vs-Marigold.png" alt="Left: an RGB photo of a car. Right: the depth map estimated from it, with no color or texture, only distance" width="720">
 
@@ -40,8 +40,8 @@ Fine-tuning matters a lot: on the 1,000-class task, complete fine-tuning gave ne
 
 The final report and its LaTeX source are included, so the work can be reproduced or edited.
 
-- 📘 [Final paper (PDF)](packages/paper/egpaper_final.pdf)
-- 📂 [LaTeX source](packages/paper/)
+- [Final paper (PDF)](packages/paper/egpaper_final.pdf)
+- [LaTeX source](packages/paper/)
 
 ---
 
@@ -57,7 +57,7 @@ The final report and its LaTeX source are included, so the work can be reproduce
 
 Pretrained CNNs expect 3-channel, 8-bit images, but depth maps have one 16-bit channel. We bridge that gap in two steps: scale the depth to 0–255, then spread it across three channels.
 
-### Three ways to turn depth into 3 channels
+### Turning depth into 3 channels
 
 <p align="center">
   <img src="packages/doc/images/stacked-plasma-virdis-and-magma.png" alt="The same depth map shown four ways: (a) grayscale or stacked, (b) Magma, (c) Plasma, (d) Viridis" width="520">
@@ -126,12 +126,8 @@ Because of limited compute, we use only the validation portion of each dataset. 
 
 ### What we learned
 
-- **Depth alone is enough for simple tasks.** On real depth with 51 classes, every model reached close to 90% Top-1.
 - **Fine-tuning helps a lot.** It lifts accuracy well above the baseline, and complete fine-tuning generally beats partial.
-- **Model ranking carries over.** Architectures that do better on RGB, such as Inception-v3 over AlexNet, also do better on depth.
-- **Data is the bottleneck.** With few examples per class, the 1,000-class results stay limited. Scaling to the full ImageNet is future work.
-
-The paper also lists future work: learned depth encodings in place of stacking, and extending the study to semantic segmentation.
+- **Data is the bottleneck.** With few examples per class, the 1,000-class results stay limited. The paper's future work is scaling to the full ImageNet, learning depth encodings instead of stacking, and extending the study to semantic segmentation.
 
 ---
 
@@ -184,10 +180,6 @@ packages/
 
 ---
 
-## Credits and License
-
-- **Marigold**, the diffusion-based model we used for depth estimation.
-- **ImageNet** and the **Washington RGB-D Object Dataset**, the sources of our data.
-- The full reference list is in the [paper](packages/paper/egpaper_final.pdf).
+## License
 
 Released under the MIT License © 2025 Dario Furlan, Dawit Andargachew.
